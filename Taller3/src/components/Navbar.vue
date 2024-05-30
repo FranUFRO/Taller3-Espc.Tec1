@@ -1,29 +1,43 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-</script>
-
 <template>
-  <!--En las clases existia mx-7 pero hacia que el navbar ocupara un ancho mayor al disponible asi que se elimino-->
-  <nav class="flex w-full int-navbar">
-      <div class="flex flex-1 items-center justify-start">
-        <RouterLink to="/inicio">Inicio</RouterLink>
-        <RouterLink to="/juego">Juego</RouterLink>
-        <RouterLink to="/elegirPersonaje">Elegir Personaje</RouterLink>
-        <RouterLink to="/records">Rercords</RouterLink>
-        <RouterLink to="/login">Iniciar Sesion</RouterLink>
-      </div>
+  <nav class="navbar">
+    <ul class="navbar-menu">
+      <li class="navbar-item"><a href="#">Inicio</a></li>
+      <li class="navbar-item"><a href="#">Sobre</a></li>
+      <li class="navbar-item"><a href="#">Servicios</a></li>
+      <li class="navbar-item"><a href="#">Contacto</a></li>
+    </ul>
   </nav>
 </template>
 
+<script setup lang="ts">
+</script>
+
 <style scoped>
-.int-navbar {
-  background-color: var(--primary);
-  height: 5rem;
+.navbar {
+  background-color: #393939; /* Color gris para la navbar */
+  padding: 1rem;
 }
 
-.link-hover:hover {
-  background-color: var(--secondary);
-  color: var(--text-white);
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item a {
+  color: var(--text-white); /* Utiliza la variable definida para el texto blanco */
+  background-color: #918f8f; /* Color gris más claro para los botones */
+  padding: 0.5rem 1rem;
+  text-decoration: none; /* Quita la línea de abajo */
+  border: 1px solid #373737; /* Bordes alrededor de los botones */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s ease;
+  
+}
+
+.navbar-item a:hover {
+  background-color: #E0E0E0; /* Color de fondo en hover */
 }
 </style>
-
