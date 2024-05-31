@@ -5,6 +5,7 @@
       <li class="navbar-item"><a href="#">Sobre</a></li>
       <li class="navbar-item"><a href="#">Servicios</a></li>
       <li class="navbar-item"><a href="#">Contacto</a></li>
+      
     </ul>
   </nav>
 </template>
