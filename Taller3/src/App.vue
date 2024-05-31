@@ -38,7 +38,7 @@ header {
 }
 
 .background {
-  margin-left: 0%;
+  margin-left: 0;
   width: 100vw;
   height: 100vh;
   background-color: var(--background);

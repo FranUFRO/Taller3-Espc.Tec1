@@ -28,13 +28,13 @@
   .sprite {
     width: 64px; /* Ajusta el ancho del frame del sprite */
     height: 64px; /* Ajusta la altura del frame del sprite */
-    background-image: url('../imagenesinicio/Idle.png'); /* Ruta a la imagen del sprite */
+    background-image: url('../imagenesinicio/sIdle.png'); /* Ruta a la imagen del sprite */
     background-repeat: no-repeat;
     background-size: cover;
     background-color: red;
   }
   
-  @keyframes samurai-animation {
+  @keyframes samurai1-animation {
     0% { background-position: 0 0; }
     16.66% { background-position: -64px 0; }
     33.33% { background-position: -128px 0; }
@@ -44,8 +44,8 @@
     100% { background-position: 0 0; }
   }
   
-  .samurai-animation {
-    animation: samurai-animation 3s steps(6) infinite;
+  .samurai1-animation {
+    animation: samurai1-animation 3s steps(6) infinite;
   }
   </style>
-  3
+  
