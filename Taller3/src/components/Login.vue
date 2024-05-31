@@ -42,36 +42,36 @@
   
   <script setup>
   import { ref } from 'vue'
-  import axios from 'axios'
+  import { useRouter } from 'vue-router'
+  import { useAuthStore } from '../stores/autentificar.js'
+  const router = useRouter()
   
   const username = ref('')
   const password = ref('')
   const errorMessage = ref('')
-  
+  const authStore = useAuthStore()
+
   const handleLogin = () => {
-  // Lee el contenido del archivo de texto (suponiendo que esté en el mismo directorio)
-  fetch('../../users.txt')
+  fetch('users.txt')
     .then(response => response.text())
     .then(data => {
-      // Divide el contenido del archivo en líneas
-      const lines = data.split('\n')
-      console.log(lines)
-      // Busca el usuario y la contraseña en el contenido del archivo
+      const lines = data.split('\n');
       const foundUser = lines.find(line => {
-        const [storedUsername, storedPassword] = line.split(':')
-        return storedUsername.trim() === username.value && storedPassword.trim() === password.value
-      })
+        const [storedUsername, storedPassword] = line.split(':');
+        return storedUsername.trim() === username.value && storedPassword.trim() === password.value;
+      });
       if (foundUser) {
-        alert('Inicio de sesión exitoso')
+        authStore.login(username.value);  
+        router.push('/juego'); 
       } else {
-        errorMessage.value = 'Usuario o contraseña incorrectos'
+        errorMessage.value = 'Usuario o contraseña incorrectos';
       }
     })
     .catch(error => {
-      console.error('Error al leer el archivo de usuarios:', error)
-      errorMessage.value = 'Error al iniciar sesión'
-    })
-}
+      console.error('Error al leer el archivo de usuarios:', error);
+      errorMessage.value = 'Error al iniciar sesión';
+    });
+};
   </script>
   
   <style scoped>
