@@ -275,7 +275,7 @@
     height: 300px;
     /* Ajusta la altura del frame del sprite */
     overflow: hidden;
-    background-image: url('../imagenesinicio/Idle.png');
+    background-image: url('../imagenesinicio/ezgif.com-gif-to-apng-converter.png');
     /* Ruta a la imagen del sprite */
     background-repeat: no-repeat;
     background-size: cover;

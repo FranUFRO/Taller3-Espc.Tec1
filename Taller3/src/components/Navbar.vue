@@ -5,7 +5,8 @@
       <li class="navbar-item"><a href="#">Sobre</a></li>
       <li class="navbar-item"><a href="#">Servicios</a></li>
       <li class="navbar-item"><a href="#">Contacto</a></li>
-      
+      <router-link to="/login" class="navbar-item"><a>Iniciar sesion</a></router-link>
+      <router-link to="/inicio" class="navbar-item"><a>Inicio</a></router-link>      
     </ul>
   </nav>
 </template>
