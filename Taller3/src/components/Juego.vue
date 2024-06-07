@@ -69,7 +69,7 @@ const gameOver = ref(false);
 // Datos de los jugadores
 const players = ref([
   { name: user, health: 100, sprite: imagenes[indiceImagen1], skillCooldown: 0, x: 50, y: 100, points: 0 },
-  { name: 'Jugador 2', health: 100, sprite: imagenes2[indiceImagen2], skillCooldown: 0, x: 750, y: 100, points: 0 }
+  { name: 'Jugador 2', health: 100, sprite: imagenes2[indiceImagen2], skillCooldown: 0, x: 650, y: 100, points: 0 }
 ]);
 
 const speed = 10;
@@ -79,6 +79,7 @@ const hitboxSize = 50; // Tamaño de la hitbox de los jugadores
 
 let atacanado = false;
 
+import ataqueSonido from '../assets/sonidos/efectoAtaque.mp3';
 
 const attack = (index) => {
   if (!atacanado) { // si atacando es verdadero significa que aun esta el gif del ataque anterior
@@ -92,7 +93,8 @@ const attack = (index) => {
         players.value[index].sprite = imagenesAtaque2[indiceImagen2];
       }
 
-      playSound('attack');
+      const audio = new Audio(ataqueSonido);
+      audio.play();
 
       setTimeout(() => {
         if (index === 0) {
@@ -135,6 +137,14 @@ const checkHealth = () => {
     } else {
       players.value[index].sprite = imgMuerte2[indiceImagen2];
     }
+
+    setTimeout(() => {
+        if (index === 0) {
+          players.value[index].sprite = imagenes[indiceImagen1];
+        } else {
+          players.value[index].sprite = imagenes2[indiceImagen2];
+        } 
+      }, 5000);
       players.value[(index + 1) % 2].points++;
       gameOver.value = true;
     }
@@ -153,7 +163,7 @@ setInterval(() => {
 // Función para reproducir sonidos
 const playSound = (effect) => {
   const sounds = {
-    attack: 'path/to/attack-sound.mp3',
+    attack: '../assets/sonidos/efectoAtaque.mp3',
     skill: 'path/to/skill-sound.mp3',
     death: 'path/to/death-sound.mp3'
   };
@@ -209,6 +219,10 @@ const resetGame = () => {
     player.x = player.name === 'Jugador 1' ? 50 : 750;
     player.y = 100;
   });
+
+  players[0].sprite= imagenes[indiceImagen1];
+  players[1].sprite=imagenes2[indiceImagen2];
+
   gameOver.value = false;
 };
 
@@ -253,7 +267,7 @@ h1{
 .arena {
   position: relative;
   width: 1000px;
-  height: 600px;
+  height: 500px;
   border: 2px solid black;
   background: url('https://cdna.artstation.com/p/assets/images/images/025/965/386/original/lennart-butz-idea5anim4.gif?1587480606') no-repeat center center;
   background-size: cover;
