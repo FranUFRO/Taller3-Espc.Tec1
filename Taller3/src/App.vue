@@ -1,6 +1,3 @@
-<script setup lang="ts">
-import Navbar from './components/Navbar.vue'
-</script>
 
 <template>
   <div class="background">
@@ -9,11 +6,11 @@ import Navbar from './components/Navbar.vue'
       <router-view />
     </header>
   </div>
- 
-  
-    
-  
 </template>
+
+<script setup>
+import Navbar from './components/Navbar.vue'
+</script>
 
 <style>
 :root {

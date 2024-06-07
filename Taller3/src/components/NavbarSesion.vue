@@ -1,13 +1,23 @@
 <template>
   <nav class="navbar">
     <ul class="navbar-menu">
-      <router-link to="/login" class="navbar-item"><a>Iniciar sesion</a></router-link>
-      <router-link to="/inicio" class="navbar-item"><a>Inicio</a></router-link>      
+      <li class="navbar-item" @click="cerrarSesion"><a>Cerrar Sesión</a></li>
+      <router-link to="/juego" class="navbar-item"><a> Jugar</a></router-link>
     </ul>
   </nav>
 </template>
 
 <script setup lang="ts">
+import { useAuthStore } from "../stores/autentificar.js";
+import { useRouter } from "vue-router";
+
+const authStore = useAuthStore();
+const router = useRouter();
+
+const cerrarSesion = () => {
+  authStore.logout(); // Llama al método logout() de tu store de Pinia
+  router.push("/inicio"); // Redirige a la página de inicio u otra página después de cerrar sesión
+};
 </script>
 
 <style scoped>
@@ -25,17 +35,18 @@
 }
 
 .navbar-item a {
-  color: var(--text-white); /* Utiliza la variable definida para el texto blanco */
+  color: var(
+    --text-white
+  ); /* Utiliza la variable definida para el texto blanco */
   background-color: #918f8f; /* Color gris más claro para los botones */
   padding: 0.5rem 1rem;
   text-decoration: none; /* Quita la línea de abajo */
   border: 1px solid #373737; /* Bordes alrededor de los botones */
   border-radius: 5px; /* Bordes redondeados */
   transition: background-color 0.3s ease;
-  
 }
 
 .navbar-item a:hover {
-  background-color: #E0E0E0; /* Color de fondo en hover */
+  background-color: #e0e0e0; /* Color de fondo en hover */
 }
 </style>

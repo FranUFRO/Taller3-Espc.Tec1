@@ -12,7 +12,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: InicioView
     },
     {
       path: '/about',
@@ -46,5 +46,6 @@ const router = createRouter({
     },
   ]
 })
+
 
 export default router

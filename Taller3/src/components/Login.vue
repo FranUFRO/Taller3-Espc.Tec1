@@ -64,7 +64,7 @@
       });
       if (foundUser) {
         authStore.login(username.value);  
-        router.push('/juego'); 
+        router.push('/elegirPersonaje'); 
       } else {
         errorMessage.value = 'Usuario o contraseña incorrectos';
       }

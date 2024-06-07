@@ -1,11 +1,14 @@
 <template>
   <div class="game-container background">
-    <h1>Hola desde Juego</h1>
-    <h1>Hola {{ user }}</h1>
+    <header>
+      <Navbar/>
+      <h1> Usuario: {{ user }}</h1>
+    </header>
     <div class="content">
+      <h1>Usuario: {{ user }}</h1>
       <div class="arena" v-if="authStore.isAuthenticated">
         <div class="player" v-for="(player, index) in players" :key="index" :style="getPlayerStyle(player)">
-          <h2 class="player-name">{{ player.name }}</h2>
+          <h2 class="player-name" style="background-color: white;">{{ player.name }}</h2>
           <div class="health-bar">
             <div class="health" :style="{ width: player.health + '%' }"></div>
           </div>
@@ -22,10 +25,12 @@
       </div>
     </div>
     <button v-if="gameOver" @click="resetGame">Volver a jugar</button>
+    <button v-if="gameOver" @click="volverElegirPersonaje">Elegir Personajes</button>
   </div>
 </template>
 
 <script setup>
+import Navbar from '../components/NavbarSesion.vue'
 import { onMounted, computed, ref, onBeforeUnmount } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '../stores/autentificar.js';
@@ -34,12 +39,37 @@ const router = useRouter();
 const authStore = useAuthStore();
 const user = computed(() => authStore.user);
 
+import image1 from "../assets/gif/Golem/GolemWalk.gif";
+import image2 from "../assets/gif/Mago/MagoRun.gif";
+import image3 from "../assets/gif/Samurai/SamuraiRun.gif";
+import image4 from "../assets/gif/Skeleton/SkeletonRun.gif";
+import image5 from '../assets/gif/Golem/GolemAtack.gif';
+import image6 from '../assets/gif/Mago/MagoAtack.gif';
+import image7 from '../assets/gif/Samurai/SamuraiAtack.gif';
+import image8 from '../assets/gif/Skeleton/SkeletonAtack.gif';
+import image9 from '../assets/gif/Golem/GolemDead.gif';
+import image10 from '../assets/gif/Mago/MagoDead.gif';
+import image11 from '../assets/gif/Samurai/SamuraiDead.gif';
+import image12 from '../assets/gif/Skeleton/SkeletonDead.gif';
+
+const imagenes = [image1, image2];
+const imagenes2 = [image3, image4];
+
+const imagenesAtaque1=[image5, image6];
+const imagenesAtaque2=[image7,image8];
+
+const imgMuerte1=[image9, image10];
+const imgMuerte2=[image11,image12];
+
+const indiceImagen1 = localStorage.getItem('indiceImagen1');
+const indiceImagen2 = localStorage.getItem('indiceImagen2');
+
 const gameOver = ref(false);
 
 // Datos de los jugadores
 const players = ref([
-  { name: 'Jugador 1', health: 100, sprite: 'path/to/sprite1.png', skillCooldown: 0, x: 50, y: 100, points: 0 },
-  { name: 'Jugador 2', health: 100, sprite: 'path/to/sprite2.png', skillCooldown: 0, x: 750, y: 100, points: 0 }
+  { name: user, health: 100, sprite: imagenes[indiceImagen1], skillCooldown: 0, x: 50, y: 100, points: 0 },
+  { name: 'Jugador 2', health: 100, sprite: imagenes2[indiceImagen2], skillCooldown: 0, x: 750, y: 100, points: 0 }
 ]);
 
 const speed = 10;
@@ -47,13 +77,33 @@ const arenaWidth = 800;
 const arenaHeight = 600;
 const hitboxSize = 50; // Tamaño de la hitbox de los jugadores
 
-// Función de ataque
+let atacanado = false;
+
+
 const attack = (index) => {
-  const target = (index + 1) % 2;
-  if (isInRange(players.value[index], players.value[target])) {
-    players.value[target].health -= 10;
-    playSound('attack');
-    checkHealth();
+  if (!atacanado) { // si atacando es verdadero significa que aun esta el gif del ataque anterior
+    const target = (index + 1) % 2;
+    if (isInRange(players.value[index], players.value[target])) {
+      atacanado = true; 
+      players.value[target].health -= 10;
+      if (index === 0) {
+        players.value[index].sprite = imagenesAtaque1[indiceImagen1];
+      } else {
+        players.value[index].sprite = imagenesAtaque2[indiceImagen2];
+      }
+
+      playSound('attack');
+
+      setTimeout(() => {
+        if (index === 0) {
+          players.value[index].sprite = imagenes[indiceImagen1];
+        } else {
+          players.value[index].sprite = imagenes2[indiceImagen2];
+        }
+        atacanado = false; 
+      }, 1000);
+      checkHealth();
+    }
   }
 };
 
@@ -80,6 +130,11 @@ const checkHealth = () => {
       player.health = 0;
       playSound('death');
       alert(`${player.name} ha perdido`);
+      if (index === 0) {
+      players.value[index].sprite = imgMuerte1[indiceImagen1];
+    } else {
+      players.value[index].sprite = imgMuerte2[indiceImagen2];
+    }
       players.value[(index + 1) % 2].points++;
       gameOver.value = true;
     }
@@ -157,6 +212,10 @@ const resetGame = () => {
   gameOver.value = false;
 };
 
+const volverElegirPersonaje= ()=>{
+  router.push('/elegirPersonaje');
+}
+
 onMounted(() => {
   window.addEventListener('keydown', handleKeydown);
   if (!authStore.isAuthenticated) {
@@ -172,6 +231,15 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
+.sprite {
+  width: 150px;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+h1{
+  color:white;
+}
 .game-container {
   text-align: center;
 }
@@ -184,10 +252,10 @@ onBeforeUnmount(() => {
 
 .arena {
   position: relative;
-  width: 800px;
+  width: 1000px;
   height: 600px;
   border: 2px solid black;
-  background: url('https://i.pinimg.com/originals/36/09/a5/3609a58f09f1c9c87fea4cf875b564b7.gif') no-repeat center center;
+  background: url('https://cdna.artstation.com/p/assets/images/images/025/965/386/original/lennart-butz-idea5anim4.gif?1587480606') no-repeat center center;
   background-size: cover;
 }
 
@@ -210,12 +278,6 @@ onBeforeUnmount(() => {
 .health {
   height: 20px;
   background-color: #76c7c0;
-}
-
-.sprite {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
 }
 
 .ranking {

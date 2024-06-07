@@ -34,7 +34,7 @@
 
                     <div class="raza-container">
                         <div class="sprite-container">
-                            <div class="sprite-samurai samurai-animation"></div>
+                            <img src="../assets/gif/Samurai/SamuraiWalk.gif" class="d-block w-100" alt="...">
 
                         </div>
                         <div class="parrafoRaza">
@@ -54,7 +54,7 @@
                 <div>
                     <div class="raza-container">
                         <div class="sprite-container">
-                            <div class="sprite-knight knight-animation"></div>
+                            <img src="../assets/gif/Samurai/SamuraiWalk.gif" class="d-block w-100" alt="...">
 
                         </div>
                         <div class="parrafoRaza">
@@ -71,7 +71,8 @@
                 <div>
                     <div class="raza-container">
                         <div class="sprite-container">
-                            <div class="sprite-golem golem-animation"></div>
+                            <img src="../assets/gif/Golem/GolemWalk.gif" class="d-block w-100" alt="...">
+
 
                         </div>
                         <div class="parrafoRaza">
@@ -88,7 +89,8 @@
                 <div>
                     <div class="raza-container">
                         <div class="sprite-container">
-                            <div class="sprite-ninja ninja-animation"></div>
+                            <img src="../assets/gif/Ninja/NinjaWalk.gif" class="d-block w-100" alt="...">
+
 
                         </div>
                         <div class="parrafoRaza">
@@ -104,7 +106,8 @@
                 <div>
                     <div class="raza-container">
                         <div class="sprite-container">
-                            <div class="sprite-skeleton skeleton-animation"></div>
+                            <img src="../assets/gif/Skeleton/SkeletonWalk.gif" class="d-block w-100" alt="...">
+
 
                         </div>
                         <div class="parrafoRaza">
@@ -120,7 +123,7 @@
                 <div>
                     <div class="raza-container">
                         <div class="sprite-container">
-                            <div class="sprite-wizard wizard-animation"></div>
+                            <img src="../assets/gif/Mago/MagoWalk.gif" class="d-block w-100" alt="...">
 
                         </div>
                         <div class="parrafoRaza">
