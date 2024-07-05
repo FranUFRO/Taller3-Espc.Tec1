@@ -30,7 +30,7 @@ db.run(`CREATE TABLE IF NOT EXISTS user_stats(
     REFERENCES users(id)
 )`);
 
-db.run(`INSERT INTO users (username,password) VALUES ('fran','1234'),('test','test')`); //se uso para insertar a los dos usuarios de prueba
+//db.run(`INSERT INTO users (username,password) VALUES ('fran','1234'),('test','test')`); //se uso para insertar a los dos usuarios de prueba
 
 // CRUD Endpoints
 db.all('SELECT * FROM users', [], (err, rows) => {
@@ -56,6 +56,19 @@ app.post('/login', (req, res) => {
         }
     });
 });
+
+app.post('/register', (req, res) => {
+    const { username, password } = req.body;
+    db.run('INSERT INTO users (username, password) VALUES (?,?)', [username, password] ,(err) => {
+        if (err) {
+          console.error(`Error registrando al usuario`, err);
+          return res.status(500).send('Error registrando al usuario');
+        }
+        return res.status(200).send('Usuario registrado correctamente');
+      });
+});
+
+
 
 // Obtener estadísticas de un usuario
 app.get('/obtener-stats/:userId', (req, res) => {

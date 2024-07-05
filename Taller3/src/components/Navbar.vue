@@ -3,6 +3,7 @@
     <ul class="navbar-menu">
       <router-link to="/login" class="navbar-item"><a>Iniciar sesión</a></router-link>
       <router-link to="/inicio" class="navbar-item"><a>Inicio</a></router-link>
+      <router-link to="/register" class="navbar-item"><a>Registrar</a></router-link>
     </ul>
   </nav>
 </template>
