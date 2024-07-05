@@ -135,19 +135,19 @@ onMounted(() => {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
 button {
-  background-color: #4a235a; /* Color de fondo */
-  color: white; /* Color del texto */
-  border: none; /* Quitamos el borde */
-  padding: 10px 20px; /* Espaciado interno */
-  font-size: 1.2rem; /* Tamaño de fuente */
-  font-family: 'MedievalSharp', cursive; /* Fuente medieval */
-  cursor: pointer; /* Cursor tipo mano */
-  transition: background-color 0.3s ease; /* Transición suave */
-  margin-top: 10px; /* Margen superior */
+  background-color: #4a235a; 
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
+  font-size: 1.2rem; 
+  font-family: 'MedievalSharp', cursive; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  margin-top: 10px; 
 }
 
 button:hover {
-  background-color: #6c3483; /* Color de fondo al pasar el mouse */
+  background-color: #6c3483; 
 }
 .item {
   background-color: #ccc;

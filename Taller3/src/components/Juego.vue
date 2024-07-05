@@ -333,29 +333,29 @@ const generatePDF = async () => {
 
   if (userId.value) {
     try {
-      // Obtener las estadísticas actualizadas del usuario
+      
       const response = await axios.get(`http://localhost:3000/obtener-stats/${userId.value}`);
       const stats = response.data;
 
-      // Crear un nuevo documento PDF
+      
       const doc = new jsPDF();
 
-      // Configurar el título
+      
       doc.setFontSize(22);
       doc.setTextColor(0, 102, 204);
       doc.text('Registro Histórico de Partidas', 105, 20, null, null, 'center');
 
-      // Agregar información del jugador
+     
       doc.setFontSize(16);
       doc.setTextColor(0, 0, 0);
       doc.text(`Nombre Jugador: ${authStore.user}`, 20, 40);
 
-      // Agregar fecha actual
+      
       const fecha = new Date().toLocaleDateString();
       doc.setFontSize(12);
       doc.text(`Fecha: ${fecha}`, 20, 50);
 
-      // Crear tabla de estadísticas
+     
       const tableColumn = ["Estadística", "Valor"];
       const tableRows = [
         ["Juegos Totales", stats.total_games],
@@ -372,12 +372,12 @@ const generatePDF = async () => {
         alternateRowStyles: { fillColor: [245, 245, 245] },
       });
 
-      // Calcular porcentaje de victorias
+     
       const winPercentage = (stats.wins / stats.total_games * 100).toFixed(2);
       doc.setFontSize(14);
       doc.text(`Porcentaje de Victorias: ${winPercentage}%`, 20, doc.lastAutoTable.finalY + 20);
 
-      // Guardar el PDF con el nombre del usuario y la fecha
+     
       const pdfName = `registro_partidas_${authStore.user}_${fecha.replace(/\//g, '-')}.pdf`;
       doc.save(pdfName);
 

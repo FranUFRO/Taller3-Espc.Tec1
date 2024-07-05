@@ -18,14 +18,14 @@
   background-image: url('https://img.freepik.com/free-photo/grunge-vintage-paper-background-with-stains_1048-15821.jpg'); /* Color púrpura oscuro para la navbar */
   padding: 1rem;
   text-align: center;
-  font-family: 'MedievalSharp', cursive; /* Fuente medieval */
-  border-bottom: 2px solid #6b5913; /* Borde dorado en la parte inferior */
+  font-family: 'MedievalSharp', cursive; 
+  border-bottom: 2px solid #6b5913; 
 }
 
 .navbar-menu {
   list-style: none;
   display: flex;
-  justify-content: center; /* Centra los elementos horizontalmente */
+  justify-content: center; 
   gap: 1rem;
   margin: 0;
   padding: 0;
@@ -33,17 +33,17 @@
 
 .navbar-item a {
   text-decoration: none;
-  color: #e4bd20; /* Color dorado para el texto */
-  background-color: #2c2c2c; /* Color marrón claro para los botones */
+  color: #e4bd20; 
+  background-color: #2c2c2c; 
   padding: 0.5rem 1rem;
   text-decoration: none;
-  border: 2px solid #1f0629; /* Borde púrpura */
+  border: 2px solid #1f0629; 
   border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave en hover */
+  transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
 .navbar-item a:hover {
-  background-color: #a1a32b; /* Color de fondo púrpura en hover */
-  color: #fafafa; /* Texto blanco en hover */
+  background-color: #a1a32b;
+  color: #fafafa; 
 }
 </style>

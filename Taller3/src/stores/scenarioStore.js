@@ -1,4 +1,4 @@
-// stores/scenarioStore.js
+
 import { defineStore } from 'pinia';
 
 export const useScenarioStore = defineStore('scenario', {

@@ -10,12 +10,12 @@
 </template>
 
 <script setup>
-// No se requiere script adicional para este ejemplo.
+
 </script>
 
 <style scoped>
 .background {
-  /* Estilos para el fondo si son necesarios */
+ 
 }
 
 .container {
@@ -26,9 +26,9 @@
 }
 
 .sprite {
-  width: 64px; /* Ajusta el ancho del frame del sprite */
-  height: 64px; /* Ajusta la altura del frame del sprite */
-  background-image: url('../imagenesinicio/gIdle.png'); /* Ruta a la imagen del sprite */
+  width: 64px; 
+  height: 64px; 
+  background-image: url('../imagenesinicio/gIdle.png'); 
   background-repeat: no-repeat;
   background-size: cover;
   background-color: red;

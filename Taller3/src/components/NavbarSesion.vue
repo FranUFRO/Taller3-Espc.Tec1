@@ -25,8 +25,8 @@ const cerrarSesion = () => {
   background-image: url('https://img.freepik.com/free-photo/grunge-vintage-paper-background-with-stains_1048-15821.jpg'); /* Color púrpura oscuro para la navbar */
   padding: 1rem;
   text-align: center;
-  font-family: 'MedievalSharp', cursive; /* Fuente medieval */
-  border-bottom: 2px solid #6b5913; /* Borde dorado en la parte inferior */
+  font-family: 'MedievalSharp', cursive; 
+  border-bottom: 2px solid #6b5913; 
 }
 
 .navbar-menu {
@@ -40,16 +40,16 @@ const cerrarSesion = () => {
 .navbar-item a {
   color: var(
     --text-white
-  ); /* Utiliza la variable definida para el texto blanco */
-  background-color: #918f8f; /* Color gris más claro para los botones */
+  ); 
+  background-color: #918f8f; 
   padding: 0.5rem 1rem;
-  text-decoration: none; /* Quita la línea de abajo */
-  border: 1px solid #373737; /* Bordes alrededor de los botones */
-  border-radius: 5px; /* Bordes redondeados */
+  text-decoration: none; 
+  border: 1px solid #373737; 
+  border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
 .navbar-item a:hover {
-  background-color: #e0e0e0; /* Color de fondo en hover */
+  background-color: #e0e0e0; 
 }
 </style>

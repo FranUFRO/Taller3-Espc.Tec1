@@ -114,8 +114,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Ajuste para que el contenido se alinee arriba */
-  padding-bottom: 50px; /* Espacio adicional al final para asegurar el scroll */
+  justify-content: flex-start; 
+  padding-bottom: 50px; 
 }
 
   
