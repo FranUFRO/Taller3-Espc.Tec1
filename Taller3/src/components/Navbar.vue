@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar">
     <ul class="navbar-menu">
-      <router-link to="/login" class="navbar-item"><a>Iniciar sesion</a></router-link>
-      <router-link to="/inicio" class="navbar-item"><a>Inicio</a></router-link>      
+      <router-link to="/login" class="navbar-item"><a>Iniciar sesión</a></router-link>
+      <router-link to="/inicio" class="navbar-item"><a>Inicio</a></router-link>
     </ul>
   </nav>
 </template>
@@ -11,31 +11,38 @@
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
 .navbar {
-  background-color: #393939; /* Color gris para la navbar */
+  background-image: url('https://img.freepik.com/free-photo/grunge-vintage-paper-background-with-stains_1048-15821.jpg'); /* Color púrpura oscuro para la navbar */
   padding: 1rem;
+  text-align: center;
+  font-family: 'MedievalSharp', cursive; /* Fuente medieval */
+  border-bottom: 2px solid #6b5913; /* Borde dorado en la parte inferior */
 }
 
 .navbar-menu {
   list-style: none;
   display: flex;
+  justify-content: center; /* Centra los elementos horizontalmente */
   gap: 1rem;
   margin: 0;
   padding: 0;
 }
 
 .navbar-item a {
-  color: var(--text-white); /* Utiliza la variable definida para el texto blanco */
-  background-color: #918f8f; /* Color gris más claro para los botones */
+  text-decoration: none;
+  color: #e4bd20; /* Color dorado para el texto */
+  background-color: #2c2c2c; /* Color marrón claro para los botones */
   padding: 0.5rem 1rem;
-  text-decoration: none; /* Quita la línea de abajo */
-  border: 1px solid #373737; /* Bordes alrededor de los botones */
-  border-radius: 5px; /* Bordes redondeados */
-  transition: background-color 0.3s ease;
-  
+  text-decoration: none;
+  border: 2px solid #1f0629; /* Borde púrpura */
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave en hover */
 }
 
 .navbar-item a:hover {
-  background-color: #E0E0E0; /* Color de fondo en hover */
+  background-color: #a1a32b; /* Color de fondo púrpura en hover */
+  color: #fafafa; /* Texto blanco en hover */
 }
 </style>

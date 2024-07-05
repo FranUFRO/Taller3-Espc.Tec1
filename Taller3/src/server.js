@@ -30,7 +30,7 @@ db.run(`CREATE TABLE IF NOT EXISTS user_stats(
     REFERENCES users(id)
 )`);
 
-//db.run(`INSERT INTO users (username,password) VALUES ('fran','1234'),('test','test')`); //se uso para insertar a los dos usuarios de prueba
+db.run(`INSERT INTO users (username,password) VALUES ('fran','1234'),('test','test')`); //se uso para insertar a los dos usuarios de prueba
 
 // CRUD Endpoints
 db.all('SELECT * FROM users', [], (err, rows) => {

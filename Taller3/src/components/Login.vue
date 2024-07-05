@@ -10,7 +10,7 @@
             <div class="card-body">
               <form @submit.prevent="handleLogin">
                 <div class="form-group">
-                  <label for="username">Nombre de Usuario</label>
+                  <label class="textl" for="username">Nombre de Usuario</label>
                   <input
                     type="text"
                     id="username"
@@ -20,7 +20,7 @@
                   />
                 </div>
                 <div class="form-group mt-3">
-                  <label for="password">Contraseña</label>
+                  <label class="textl" for="password">Contraseña</label>
                   <input
                     type="password"
                     id="password"
@@ -70,22 +70,54 @@ const handleLogin = async () => {
 </script>
 
 <style scoped>
-.card {
-  margin-top: 2rem;
+.background {
+  background-image: url('C:\Users\LEVEENT\Desktop\Taller3-Espc.Tec1\Taller3\src\imagenesinicio\2d-brick-gray-wall-texture-600nw-2127747113.webp'); /* Ruta a tu imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh; /* Ajusta la altura mínima a la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.card-header {
-  background-color: #343a40;
+.card {
+  margin-top: 2rem;
+  background-color: rgba(0, 0, 0, 0.9); /* Fondo semi-transparente para la tarjeta */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  background-image:url("https://img.freepik.com/free-photo/grunge-vintage-paper-background-with-stains_1048-15821.jpg") ;
+}
+.textl{
   color: white;
 }
 
+.card-header {
+  background-color: #5c5e4c;
+  color: rgb(255, 255, 255);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
 .btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #373a3d;
+  border-color: #7e8038;
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #004085;
+  background-color: #96930a;
+  border-color: #550c51;
+}
+
+.form-control {
+  border: 1px solid #ced4da; /* Borde del campo de entrada */
+}
+
+.text-danger {
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
 }
 </style>

@@ -1,388 +1,296 @@
 <template>
-
     <body>
-        <div class="background">
-            <div class="header">
-                <h1 class="main-title">BIENVENIDO A ARTHERIZIA</h1>
-            </div>
-
-
-            <div class="contenedor-imagenes">
-                <div class="imgxd">
-                    <img src="https://i.pinimg.com/originals/36/09/a5/3609a58f09f1c9c87fea4cf875b564b7.gif" alt="">
-                </div>
-
-                <div class="imgxd">
-                    <img src="https://cdna.artstation.com/p/assets/images/images/025/965/386/original/lennart-butz-idea5anim4.gif?1587480606"
-                        alt="">
-                </div>
-
-                <div class="imgxd">
-                    <img src="https://cdna.artstation.com/p/assets/images/images/015/690/214/original/daniel-gianino-fairy-forest1.gif?1549276717"
-                        alt="">
-                </div>
-
-                <div class="imgxd">
-                    <img src="https://i.pinimg.com/originals/f5/bb/fa/f5bbfaf72ab0587d6408748418d948bb.gif" alt="">
-                </div>
-
-            </div>
-
-            <div class="container">
-                <div>
-
-
-                    <div class="raza-container">
-                        <div class="sprite-container">
-                            <img src="../assets/gif/Samurai/SamuraiWalk.gif" class="d-block w-100" alt="...">
-
-                        </div>
-                        <div class="parrafoRaza">
-                            <h1>Raza Samurai</h1>
-                            <p>los samuráis son una raza ancestral de guerreros nobles cuya historia se remonta a
-                                tiempos antiguos. Dotados de una destreza incomparable en el arte del combate y una
-                                profunda conexión con el honor y la lealtad, los samuráis son la personificación del
-                                valor y la disciplina en el campo de batalla.
-                                Guiados por el código del bushido, los samuráis de Ghazlo juran fidelidad a sus señores
-                                y protegen su tierra con una devoción inquebrantable. </p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div>
-                    <div class="raza-container">
-                        <div class="sprite-container">
-                            <img src="../assets/gif/Samurai/SamuraiWalk.gif" class="d-block w-100" alt="...">
-
-                        </div>
-                        <div class="parrafoRaza">
-                            <h1>Raza Caballero</h1>
-                            <p>Los caballeros son una raza de nobles guerreros cuya existencia está profundamente
-                                arraigada en la historia del reino. Desde jóvenes, estos valientes defensores son
-                                entrenados rigurosamente en el arte del combate y en tácticas militares avanzadas. Con
-                                armaduras brillantes y espadas forjadas por los mejores herreros, los caballeros
-                                enfrentan a sus enemigos con una determinación inquebrantable. </p>
-                        </div>
-                    </div>
-
-                </div>
-                <div>
-                    <div class="raza-container">
-                        <div class="sprite-container">
-                            <img src="../assets/gif/Golem/GolemWalk.gif" class="d-block w-100" alt="...">
-
-
-                        </div>
-                        <div class="parrafoRaza">
-                            <h1>Raza Golem</h1>
-                            <p>Los caballeros son una raza de nobles guerreros cuya existencia está profundamente
-                                arraigada en la historia del reino. Desde jóvenes, estos valientes defensores son
-                                entrenados rigurosamente en el arte del combate y en tácticas militares avanzadas. Con
-                                armaduras brillantes y espadas forjadas por los mejores herreros, los caballeros
-                                enfrentan a sus enemigos con una determinación inquebrantable. </p>
-                        </div>
-                    </div>
-
-                </div>
-                <div>
-                    <div class="raza-container">
-                        <div class="sprite-container">
-                            <img src="../assets/gif/Ninja/NinjaWalk.gif" class="d-block w-100" alt="...">
-
-
-                        </div>
-                        <div class="parrafoRaza">
-                            <h1>Raza Ninja</h1>
-                            <p>Los caballeros son una raza de nobles guerreros cuya existencia está profundamente
-                                arraigada en la historia del reino. Desde jóvenes, estos valientes defensores son
-                                entrenados rigurosamente en el arte del combate y en tácticas militares avanzadas. Con
-                                armaduras brillantes y espadas forjadas por los mejores herreros, los caballeros
-                                enfrentan a sus enemigos con una determinación inquebrantable. </p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="raza-container">
-                        <div class="sprite-container">
-                            <img src="../assets/gif/Skeleton/SkeletonWalk.gif" class="d-block w-100" alt="...">
-
-
-                        </div>
-                        <div class="parrafoRaza">
-                            <h1>Raza Skeleton</h1>
-                            <p>Los caballeros son una raza de nobles guerreros cuya existencia está profundamente
-                                arraigada en la historia del reino. Desde jóvenes, estos valientes defensores son
-                                entrenados rigurosamente en el arte del combate y en tácticas militares avanzadas. Con
-                                armaduras brillantes y espadas forjadas por los mejores herreros, los caballeros
-                                enfrentan a sus enemigos con una determinación inquebrantable. </p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="raza-container">
-                        <div class="sprite-container">
-                            <img src="../assets/gif/Mago/MagoWalk.gif" class="d-block w-100" alt="...">
-
-                        </div>
-                        <div class="parrafoRaza">
-                            <h1>Raza Mago</h1>
-                            <p>Los caballeros son una raza de nobles guerreros cuya existencia está profundamente
-                                arraigada en la historia del reino. Desde jóvenes, estos valientes defensores son
-                                entrenados rigurosamente en el arte del combate y en tácticas militares avanzadas. Con
-                                armaduras brillantes y espadas forjadas por los mejores herreros, los caballeros
-                                enfrentan a sus enemigos con una determinación inquebrantable. </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div>
-
-
-            </div>
+      <div class="background">
+        <div class="header">
+          <h1 class="main-title">BIENVENIDO A ARTHERIZIA</h1>
         </div>
+  
+        <div class="contenedor-imagenes">
+          <h2 class="section-title">Escenarios</h2>
+          <div class="imagenes-container">
+            <div class="imgxd">
+              <img src="https://i.pinimg.com/originals/36/09/a5/3609a58f09f1c9c87fea4cf875b564b7.gif" alt="">
+            </div>
+            <div class="imgxd">
+              <img src="https://cdna.artstation.com/p/assets/images/images/025/965/386/original/lennart-butz-idea5anim4.gif?1587480606" alt="">
+            </div>
+            <div class="imgxd">
+              <img src="https://cdna.artstation.com/p/assets/images/images/015/690/214/original/daniel-gianino-fairy-forest1.gif?1549276717" alt="">
+            </div>
+            <div class="imgxd">
+              <img src="https://i.pinimg.com/originals/f5/bb/fa/f5bbfaf72ab0587d6408748418d948bb.gif" alt="">
+            </div>
+          </div>
+        </div>
+  
+        <div class="container">
+          <h2 class="section-title">Razas</h2>
+          <div class="raza-container">
+            <div class="sprite-container">
+              <img src="../assets/gif/Samurai/SamuraiWalk.gif" class="d-block w-100" alt="...">
+            </div>
+            <div class="parrafoRaza">
+              <h1 class="raza-title">Raza Samurai</h1>
+              <p>Los samuráis son una raza ancestral de guerreros nobles cuya historia se remonta a tiempos antiguos. Dotados de una destreza incomparable en el arte del combate y una profunda conexión con el honor y la lealtad, los samuráis son la personificación del valor y la disciplina en el campo de batalla. Guiados por el código del bushido, los samuráis de Ghazlo juran fidelidad a sus señores y protegen su tierra con una devoción inquebrantable.</p>
+            </div>
+          </div>
+  
+          <div class="raza-container">
+            <div class="sprite-container">
+              <img src="../assets/gif/Samurai/SamuraiWalk.gif" class="d-block w-100" alt="...">
+            </div>
+            <div class="parrafoRaza">
+              <h1 class="raza-title">Raza Caballero</h1>
+              <p>Los caballeros son una raza de nobles guerreros cuya existencia está profundamente arraigada en la historia del reino. Desde jóvenes, estos valientes defensores son entrenados rigurosamente en el arte del combate y en tácticas militares avanzadas. Con armaduras brillantes y espadas forjadas por los mejores herreros, los caballeros enfrentan a sus enemigos con una determinación inquebrantable.</p>
+            </div>
+          </div>
+  
+          <div class="raza-container">
+            <div class="sprite-container">
+              <img src="../assets/gif/Golem/GolemWalk.gif" class="d-block w-100" alt="...">
+            </div>
+            <div class="parrafoRaza">
+              <h1 class="raza-title">Raza Golem</h1>
+              <p>Los caballeros son una raza de nobles guerreros cuya existencia está profundamente arraigada en la historia del reino. Desde jóvenes, estos valientes defensores son entrenados rigurosamente en el arte del combate y en tácticas militares avanzadas. Con armaduras brillantes y espadas forjadas por los mejores herreros, los caballeros enfrentan a sus enemigos con una determinación inquebrantable.</p>
+            </div>
+          </div>
+  
+          <div class="raza-container">
+            <div class="sprite-container">
+              <img src="../assets/gif/Ninja/NinjaWalk.gif" class="d-block w-100" alt="...">
+            </div>
+            <div class="parrafoRaza">
+              <h1 class="raza-title">Raza Ninja</h1>
+              <p>Los caballeros son una raza de nobles guerreros cuya existencia está profundamente arraigada en la historia del reino. Desde jóvenes, estos valientes defensores son entrenados rigurosamente en el arte del combate y en tácticas militares avanzadas. Con armaduras brillantes y espadas forjadas por los mejores herreros, los caballeros enfrentan a sus enemigos con una determinación inquebrantable.</p>
+            </div>
+          </div>
+  
+          <div class="raza-container">
+            <div class="sprite-container">
+              <img src="../assets/gif/Skeleton/SkeletonWalk.gif" class="d-block w-100" alt="...">
+            </div>
+            <div class="parrafoRaza">
+              <h1 class="raza-title">Raza Skeleton</h1>
+              <p>Los caballeros son una raza de nobles guerreros cuya existencia está profundamente arraigada en la historia del reino. Desde jóvenes, estos valientes defensores son entrenados rigurosamente en el arte del combate y en tácticas militares avanzadas. Con armaduras brillantes y espadas forjadas por los mejores herreros, los caballeros enfrentan a sus enemigos con una determinación inquebrantable.</p>
+            </div>
+          </div>
+  
+          <div class="raza-container">
+            <div class="sprite-container">
+              <img src="../assets/gif/Mago/MagoWalk.gif" class="d-block w-100" alt="...">
+            </div>
+            <div class="parrafoRaza">
+              <h1 class="raza-title">Raza Mago</h1>
+              <p>Los caballeros son una raza de nobles guerreros cuya existencia está profundamente arraigada en la historia del reino. Desde jóvenes, estos valientes defensores son entrenados rigurosamente en el arte del combate y en tácticas militares avanzadas. Con armaduras brillantes y espadas forjadas por los mejores herreros, los caballeros enfrentan a sus enemigos con una determinación inquebrantable.</p>
+            </div>
+          </div>
+        </div>
+        <div class="drag-drop-section">
+          <h2 class="section-title">Selecciona tu Escenario</h2>
+          <div class="drag-container">
+            <div class="imgxd draggable" draggable="true" data-id="1">
+              <img src="https://i.pinimg.com/originals/36/09/a5/3609a58f09f1c9c87fea4cf875b564b7.gif" alt="">
+            </div>
+            <div class="imgxd draggable" draggable="true" data-id="2">
+              <img src="https://cdna.artstation.com/p/assets/images/images/025/965/386/original/lennart-butz-idea5anim4.gif?1587480606" alt="">
+            </div>
+            <div class="imgxd draggable" draggable="true" data-id="3">
+              <img src="https://cdna.artstation.com/p/assets/images/images/015/690/214/original/daniel-gianino-fairy-forest1.gif?1549276717" alt="">
+            </div>
+            <div class="imgxd draggable" draggable="true" data-id="4">
+              <img src="https://i.pinimg.com/originals/f5/bb/fa/f5bbfaf72ab0587d6408748418d948bb.gif" alt="">
+            </div>
+          </div>
+          <div class="drop-container" @drop="handleDrop" @dragover.prevent>
+            <p>Arrastra el escenario aquí</p>
+          </div>
+          import { useScenarioStore } from '../stores/scenarioStore'; 
+        </div>
+      </div>
     </body>
-</template>
-
-<script>
-
-</script>
-
-<style scoped>
-#body {
+  </template>
+  
+  <script>
+  
+  
+  export default {
+    methods: {
+      handleDrop(event) {
+        const scenarioId = event.dataTransfer.getData('text/plain');
+        const scenarioStore = useScenarioStore();
+        scenarioStore.setSelectedScenario(scenarioId);
+      },
+      handleDragStart(event) {
+        event.dataTransfer.setData('text/plain', event.target.dataset.id);
+      },
+    },
+    mounted() {
+      const draggables = document.querySelectorAll('.draggable');
+      draggables.forEach(draggable => {
+        draggable.addEventListener('dragstart', this.handleDragStart);
+      });
+    },
+  };
+  </script>
+  
+  <style scoped>
+  @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+  
+  body {
     margin: 0;
-    /* Elimina los márgenes predeterminados del cuerpo */
-    overflow: hidden;
-    /* Evita el desplazamiento horizontal y vertical */
-
+    font-family: 'Arial', sans-serif;
+  }
+  .background {
+  width: 100%;
+  height: 300vh;
+  background-image: url('../src/imagenesinicio/2d-brick-gray-wall-texture-600nw-2127747113.webp');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Ajuste para que el contenido se alinee arriba */
+  padding-bottom: 50px; /* Espacio adicional al final para asegurar el scroll */
 }
 
-
-
-.contenedor-imagenes {
-    margin-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 3rem;
-    
-
-}
-
-.imgxd img {
-    width: 1280px; /* Ajusta el ancho deseado */
-    height: 1000px; /* Ajusta la altura deseada */
-    object-fit: cover; /* Mantiene la relación de aspecto y recorta el exceso para llenar el espacio */
-    border: 2px solid black;
-}
-
-.background {
-    width: 100%;
-    /* Ancho igual al ancho de la ventana del navegador */
-    height: 100%;
-    /* Alto igual al alto de la ventana del navegador */
-    background-image: url('../src/imagenesinicio/2d-brick-gray-wall-texture-600nw-2127747113.webp');
-    /* Ruta de la imagen */
-    background-size: auto;
-    /* Tamaño automático de la imagen */
-    background-repeat: repeat;
-    /* Repetir la imagen */
-    background-position: left;
-    /* Posición de la imagen en la esquina superior izquierda */
-}
-
-.sprite-container {
-    width: 300px;
-    /* Nuevo ancho del sprite */
-    height: 300px;
-    /* Nuevo alto del sprite */
-    overflow: hidden;
-    /* Para ocultar las partes del sprite que se salgan del contenedor */
-}
-.header {
+  
+  .header {
     width: 100%;
     padding: 20px 0;
-    background-color: #3333333b;
     color: white;
     text-align: center;
-}
-
-.main-title {
-    padding-top: 60px;
+    margin-top: 50px;
+  }
+  
+  .main-title {
     font-size: 3rem;
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-family: 'Arial', sans-serif;
-}
-
-.container {
+    font-family: 'MedievalSharp', cursive;
+    color: #f4d03f;
+    text-shadow: 2px 2px 4px #000;
+    border: 2px solid #4a235a;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+  
+  .drag-drop-section {
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #4a235a;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: auto;
+  }
+  
+  .drag-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .drop-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px dashed #f4d03f;
+    border-radius: 10px;
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.5);
+    color: white;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1.2rem;
+  }
+  
+  .contenedor-imagenes {
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
     width: 100%;
-    /* Ajustar el ancho al 100% */
-    height: 100%;
-    /* Ajustar la altura al 100% */
-    padding: 20px;
-    /* Añadir relleno */
-    box-sizing: border-box;
-    /* Incluir el relleno en el tamaño total */
-}
-
-.sprite-skeleton {
-    width: 300px;
-    /* Ajusta el ancho del frame del sprite */
-    height: 300px;
-    /* Ajusta la altura del frame del sprite */
-    overflow: hidden;
-    background-image: url('../imagenesinicio/sIdle.png');
-    /* Ruta a la imagen del sprite */
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-
-.sprite-wizard {
-    width: 300px;
-    /* Ajusta el ancho del frame del sprite */
-    height: 300px;
-    /* Ajusta la altura del frame del sprite */
-    overflow: hidden;
-    background-image: url('../imagenesinicio/wIdle.png');
-    /* Ruta a la imagen del sprite */
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-
-.sprite-ninja {
-    width: 300px;
-    /* Ajusta el ancho del frame del sprite */
-    height: 300px;
-    /* Ajusta la altura del frame del sprite */
-    overflow: hidden;
-    background-image: url('../imagenesinicio/nIdle.png');
-    /* Ruta a la imagen del sprite */
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-
-.sprite-samurai {
-    width: 300px;
-    /* Ajusta el ancho del frame del sprite */
-    height: 300px;
-    /* Ajusta la altura del frame del sprite */
-    overflow: hidden;
-    background-image: url('../imagenesinicio/ezgif.com-gif-to-apng-converter.png');
-    /* Ruta a la imagen del sprite */
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-
-.sprite-samurai1 {
-    width: 64px;
-    /* Ajusta el ancho del frame del sprite */
-    height: 64px;
-    /* Ajusta la altura del frame del sprite */
-    overflow: hidden;
-    background-image: url('../imagenesinicio/Idle.png');
-    /* Ruta a la imagen del sprite */
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-
-@keyframes samurai1-animation {
-    0% {
-        background-position: 0 0;
-    }
-
-    16.66% {
-        background-position: -64px 0;
-    }
-
-    33.33% {
-        background-position: -128px 0;
-    }
-
-    50% {
-        background-position: -192px 0;
-    }
-
-    66.66% {
-        background-position: -256px 0;
-    }
-
-    83.33% {
-        background-position: -320px 0;
-    }
-
-    100% {
-        background-position: 0 0;
-    }
-}
-
-.samurai1-animation {
-    animation: samurai1-animation 1s steps(1) infinite;
-}
-
-.sprite-knight {
-    width: 300px;
-    /* Ajusta el ancho del frame del sprite */
-    height: 300px;
-    /* Ajusta la altura del frame del sprite */
-    overflow: hidden;
-    background-image: url('../imagenesinicio/kIdle.png');
-    /* Ruta a la imagen del sprite */
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-
-.sprite-golem {
-    width: 300px;
-    /* Ajusta el ancho del frame del sprite */
-    height: 300px;
-    /* Ajusta la altura del frame del sprite */
-    overflow: hidden;
-    background-image: url('../imagenesinicio/gIdle.png');
-    /* Ruta a la imagen del sprite */
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-
-
-
-
-
-.parrafoRaza {
-    width: 100%;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: justify;
-    /* Justificar el texto */
-    line-height: 1.5;
-    /* Espacio entre líneas para hacerlas más largas */
-    font-size: 1.5rem;
-
-}
-
-.raza-container {
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #f4d03f;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: 'MedievalSharp', cursive;
+    text-shadow: 2px 2px 4px #000;
+  }
+  
+  .imagenes-container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
-    background-color: #908b8bd5;
-    /* Color de fondo del párrafo */
+  }
+  
+  .imgxd img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
     border: 2px solid black;
+    transition: transform 0.3s ease;
+  }
+  
+  .imgxd img:hover {
+    transform: scale(1.1);
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
     width: 100%;
-    /* Ajustar el ancho del contenedor del sprite y el párrafo al 100% del contenedor padre */
-}
-</style>
+  }
+  
+  .raza-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 20px;
+    background-color: rgba(51, 51, 51, 0.5);
+    border: 2px solid #4a235a;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    width: 80%;
+  }
+  
+  .raza-container:hover {
+    transform: scale(1.05);
+  }
+  
+  .sprite-container {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+  }
+  
+  .parrafoRaza {
+    color: white;
+    font-size: 1rem;
+    max-width: 600px;
+    font-family: 'MedievalSharp', cursive;
+  }
+  
+  .raza-title {
+    font-size: 1.5rem;
+    color: #f4d03f;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    font-family: 'MedievalSharp', cursive;
+    text-shadow: 2px 2px 4px #000;
+  }
+  </style>
+  
