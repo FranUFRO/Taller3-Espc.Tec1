@@ -22,8 +22,11 @@ const cerrarSesion = () => {
 
 <style scoped>
 .navbar {
-  background-color: #393939; /* Color gris para la navbar */
+  background-image: url('https://img.freepik.com/free-photo/grunge-vintage-paper-background-with-stains_1048-15821.jpg'); /* Color púrpura oscuro para la navbar */
   padding: 1rem;
+  text-align: center;
+  font-family: 'MedievalSharp', cursive; /* Fuente medieval */
+  border-bottom: 2px solid #6b5913; /* Borde dorado en la parte inferior */
 }
 
 .navbar-menu {

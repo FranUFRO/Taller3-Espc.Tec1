@@ -85,27 +85,9 @@
             </div>
           </div>
         </div>
-        <div class="drag-drop-section">
-          <h2 class="section-title">Selecciona tu Escenario</h2>
-          <div class="drag-container">
-            <div class="imgxd draggable" draggable="true" data-id="1">
-              <img src="https://i.pinimg.com/originals/36/09/a5/3609a58f09f1c9c87fea4cf875b564b7.gif" alt="">
-            </div>
-            <div class="imgxd draggable" draggable="true" data-id="2">
-              <img src="https://cdna.artstation.com/p/assets/images/images/025/965/386/original/lennart-butz-idea5anim4.gif?1587480606" alt="">
-            </div>
-            <div class="imgxd draggable" draggable="true" data-id="3">
-              <img src="https://cdna.artstation.com/p/assets/images/images/015/690/214/original/daniel-gianino-fairy-forest1.gif?1549276717" alt="">
-            </div>
-            <div class="imgxd draggable" draggable="true" data-id="4">
-              <img src="https://i.pinimg.com/originals/f5/bb/fa/f5bbfaf72ab0587d6408748418d948bb.gif" alt="">
-            </div>
-          </div>
-          <div class="drop-container" @drop="handleDrop" @dragover.prevent>
-            <p>Arrastra el escenario aquí</p>
-          </div>
-          import { useScenarioStore } from '../stores/scenarioStore'; 
-        </div>
+        
+         
+       
       </div>
     </body>
   </template>
@@ -113,24 +95,7 @@
   <script>
   
   
-  export default {
-    methods: {
-      handleDrop(event) {
-        const scenarioId = event.dataTransfer.getData('text/plain');
-        const scenarioStore = useScenarioStore();
-        scenarioStore.setSelectedScenario(scenarioId);
-      },
-      handleDragStart(event) {
-        event.dataTransfer.setData('text/plain', event.target.dataset.id);
-      },
-    },
-    mounted() {
-      const draggables = document.querySelectorAll('.draggable');
-      draggables.forEach(draggable => {
-        draggable.addEventListener('dragstart', this.handleDragStart);
-      });
-    },
-  };
+  
   </script>
   
   <style scoped>

@@ -6,7 +6,7 @@
     </header>
     <div class="content">
       <h1>Usuario: {{ user }}</h1>
-      <div class="arena" v-if="authStore.isAuthenticated">
+      <div class="arena" v-if="authStore.isAuthenticated" :style="{ backgroundImage: `url('${scenarioBackground}')` }">
         <div class="player" v-for="(player, index) in players" :key="index" :style="getPlayerStyle(player)">
           <h2 class="player-name" style="background-color: white;">{{ player.name }}</h2>
           <div class="health-bar">
@@ -36,6 +36,9 @@ import { onMounted, computed, ref, onBeforeUnmount } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '../stores/autentificar.js';
 import axios from 'axios';
+
+
+const scenarioBackground = useScenarioStore().background;
 
 const router = useRouter();
 const authStore = useAuthStore();
@@ -321,6 +324,7 @@ onBeforeUnmount(() => {
 
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
+import { useScenarioStore } from '@/stores/scenarioStore';
 
 const generatePDF = async () => {
   if (!userId.value) {
@@ -412,7 +416,6 @@ h1{
   width: 1000px;
   height: 500px;
   border: 2px solid black;
-  background: url('https://cdna.artstation.com/p/assets/images/images/025/965/386/original/lennart-butz-idea5anim4.gif?1587480606') no-repeat center center;
   background-size: cover;
 }
 
@@ -459,4 +462,6 @@ h1{
   font-size: 18px;
   margin-bottom: 10px;
 }
+
+
 </style>
