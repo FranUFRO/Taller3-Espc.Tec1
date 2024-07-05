@@ -21,6 +21,7 @@
           <li v-for="(player, index) in sortedPlayers" :key="index">
             {{ player.name }}: {{ player.points }} puntos
           </li>
+          <button @click="generatePDF">Obtener Registro en PDF</button>
         </ul>
       </div>
     </div>
@@ -34,6 +35,7 @@ import Navbar from '../components/NavbarSesion.vue'
 import { onMounted, computed, ref, onBeforeUnmount } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '../stores/autentificar.js';
+import axios from 'axios';
 
 const router = useRouter();
 const authStore = useAuthStore();
@@ -65,6 +67,74 @@ const indiceImagen1 = localStorage.getItem('indiceImagen1');
 const indiceImagen2 = localStorage.getItem('indiceImagen2');
 
 const gameOver = ref(false);
+const userId = ref(null);
+
+const obtenerUserId = async () => {
+  try {
+    const response = await axios.get(`http://localhost:3000/obtener-id-user/${authStore.user}`);
+     console.log(response.data.userId);
+     userId.value = response.data.userId;
+     console.log("userId.value: ", userId.value);
+  } catch (error) {
+    console.error('Error obtaining user ID:', error);
+  }
+};
+
+const obtenerStats = async () => {
+ 
+  if (userId.value) {
+    await obtenerUserId();
+  }
+  
+  if (userId.value) {
+    try {
+      const response = await axios.get(`http://localhost:3000/obtener-stats/${userId.value}`);
+      console.log('User stats:', response.data);
+      // Here you can update your component's state with the received stats
+    } catch (error) {
+      console.error('Error fetching user stats:', error);
+    }
+  } else {
+    console.error('User ID not found');
+  }
+};
+
+const actualizarStats = async () => {
+  if (!userId.value) {
+    await obtenerUserId();
+  }
+
+  if (userId.value) {
+    const winner = players.value[0].health > 0 ? 0 : 1;
+    const stats = {
+      wins: winner === 0 ? 1 : 0,
+      losses: winner === 1 ? 1 : 0,
+      totalGames: 1
+    };
+
+    try {
+      // Primero, obtenemos los stats actuales del usuario
+      const responseGet = await axios.get(`http://localhost:3000/obtener-stats/${userId.value}`);
+      const currentStats = responseGet.data;
+
+      // Actualizamos los stats
+      const updatedStats = {
+        wins: currentStats.wins + stats.wins,
+        losses: currentStats.losses + stats.losses,
+        totalGames: currentStats.wins + stats.wins+ currentStats.losses + stats.losses,
+      };
+
+      // Enviamos los stats actualizados al servidor
+      const responsePost = await axios.post(`http://localhost:3000/actualizar-stats/${userId.value}`, updatedStats);
+      console.log('Stats updated:', responsePost.data);
+    } catch (error) {
+      console.error('Error updating user stats:', error);
+    }
+  } else {
+    console.error('User ID not found');
+  }
+};
+
 
 // Datos de los jugadores
 const players = ref([
@@ -126,8 +196,8 @@ const canUseSkill = (player) => {
 };
 
 // Chequear la salud de los jugadores
-const checkHealth = () => {
-  players.value.forEach((player, index) => {
+const checkHealth = async () => {
+  players.value.forEach(async(player, index) => {
     if (player.health <= 0) {
       player.health = 0;
       playSound('death');
@@ -147,6 +217,8 @@ const checkHealth = () => {
       }, 5000);
       players.value[(index + 1) % 2].points++;
       gameOver.value = true;
+      await actualizarStats();
+      await obtenerStats();
     }
   });
 };
@@ -230,6 +302,10 @@ const volverElegirPersonaje= ()=>{
   router.push('/elegirPersonaje');
 }
 
+onMounted(async () => {
+  await obtenerUserId();
+});
+
 onMounted(() => {
   window.addEventListener('keydown', handleKeydown);
   if (!authStore.isAuthenticated) {
@@ -242,6 +318,73 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener('keydown', handleKeydown);
 });
+
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
+
+const generatePDF = async () => {
+  if (!userId.value) {
+    await obtenerUserId();
+  }
+
+  if (userId.value) {
+    try {
+      // Obtener las estadísticas actualizadas del usuario
+      const response = await axios.get(`http://localhost:3000/obtener-stats/${userId.value}`);
+      const stats = response.data;
+
+      // Crear un nuevo documento PDF
+      const doc = new jsPDF();
+
+      // Configurar el título
+      doc.setFontSize(22);
+      doc.setTextColor(0, 102, 204);
+      doc.text('Registro Histórico de Partidas', 105, 20, null, null, 'center');
+
+      // Agregar información del jugador
+      doc.setFontSize(16);
+      doc.setTextColor(0, 0, 0);
+      doc.text(`Nombre Jugador: ${authStore.user}`, 20, 40);
+
+      // Agregar fecha actual
+      const fecha = new Date().toLocaleDateString();
+      doc.setFontSize(12);
+      doc.text(`Fecha: ${fecha}`, 20, 50);
+
+      // Crear tabla de estadísticas
+      const tableColumn = ["Estadística", "Valor"];
+      const tableRows = [
+        ["Juegos Totales", stats.total_games],
+        ["Juegos Ganados", stats.wins],
+        ["Juegos Perdidos", stats.losses],
+      ];
+
+      doc.autoTable({
+        startY: 60,
+        head: [tableColumn],
+        body: tableRows,
+        theme: 'grid',
+        headStyles: { fillColor: [0, 102, 204], textColor: 255 },
+        alternateRowStyles: { fillColor: [245, 245, 245] },
+      });
+
+      // Calcular porcentaje de victorias
+      const winPercentage = (stats.wins / stats.total_games * 100).toFixed(2);
+      doc.setFontSize(14);
+      doc.text(`Porcentaje de Victorias: ${winPercentage}%`, 20, doc.lastAutoTable.finalY + 20);
+
+      // Guardar el PDF con el nombre del usuario y la fecha
+      const pdfName = `registro_partidas_${authStore.user}_${fecha.replace(/\//g, '-')}.pdf`;
+      doc.save(pdfName);
+
+    } catch (error) {
+      console.error('Error al generar el PDF:', error);
+    }
+  } else {
+    console.error('User ID not found');
+  }
+};
+
 </script>
 
 <style scoped>

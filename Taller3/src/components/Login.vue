@@ -40,60 +40,52 @@
       </div>
     </div>
   </div>
-  </template>
-  
-  <script setup>
-  import { ref } from 'vue'
-  import { useRouter } from 'vue-router'
-  import { useAuthStore } from '../stores/autentificar.js'
-  const router = useRouter()
-  
-  const username = ref('')
-  const password = ref('')
-  const errorMessage = ref('')
-  const authStore = useAuthStore()
+</template>
 
-  const handleLogin = () => {
-  fetch('users.txt')
-    .then(response => response.text())
-    .then(data => {
-      const lines = data.split('\n');
-      const foundUser = lines.find(line => {
-        const [storedUsername, storedPassword] = line.split(':');
-        return storedUsername.trim() === username.value && storedPassword.trim() === password.value;
-      });
-      if (foundUser) {
-        authStore.login(username.value);  
-        router.push('/elegirPersonaje'); 
-      } else {
-        errorMessage.value = 'Usuario o contraseña incorrectos';
-      }
-    })
-    .catch(error => {
-      console.error('Error al leer el archivo de usuarios:', error);
-      errorMessage.value = 'Error al iniciar sesión';
+<script setup>
+import axios from 'axios';
+import { useRouter } from 'vue-router';
+import { useAuthStore } from '../stores/autentificar';
+
+const router = useRouter();
+const authStore = useAuthStore();
+
+let username = '';
+let password = '';
+let errorMessage = null;
+
+const handleLogin = async () => {
+  try {
+    const response = await axios.post('http://localhost:3000/login', {
+      username,
+      password
     });
+    authStore.login(username);
+    router.push('/elegirPersonaje');
+  } catch (error) {
+    errorMessage = 'Credenciales inválidas';
+    console.error('Error durante el inicio de sesión:', error);
+  }
 };
-  </script>
-  
-  <style scoped>
-  .card {
-    margin-top: 2rem;
-  }
-  
-  .card-header {
-    background-color: #343a40;
-    color: white;
-  }
-  
-  .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-  }
-  
-  .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #004085;
-  }
-  </style>
-  
+</script>
+
+<style scoped>
+.card {
+  margin-top: 2rem;
+}
+
+.card-header {
+  background-color: #343a40;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+</style>
